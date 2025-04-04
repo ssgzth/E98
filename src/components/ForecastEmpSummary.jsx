@@ -14,7 +14,7 @@ import {
 import Autocomplete from "@mui/material/Autocomplete";
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://resourcehoursmanagement-intern-production.up.railway.app";
 
 const ForecastEmpSummary = () => {
   const [data, setData] = useState({ businessLines: [] });

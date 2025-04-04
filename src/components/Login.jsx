@@ -35,7 +35,7 @@
     
 // //     try {
 // //       const endpoint = isLogin ? '/api/login' : '/api/register';
-// //       const response = await axios.post(`http://localhost:5000${endpoint}`, formData);
+// //       const response = await axios.post(`https://resourcehoursmanagement-intern-production.up.railway.app${endpoint}`, formData);
       
 // //       setMessage(response.data.message);
 // //       onLogin(response.data.user, response.data.token);
@@ -163,7 +163,7 @@
 //     setLoading(true);
     
 //     try {
-//       const response = await axios.post(`http://localhost:5000/api/login`, formData);
+//       const response = await axios.post(`https://resourcehoursmanagement-intern-production.up.railway.app/api/login`, formData);
 //       setMessage(response.data.message);
 //       onLogin(response.data.user, response.data.token);
 //     } catch (error) {
@@ -298,7 +298,7 @@ const Login = ({ onLogin }) => {
     setLoading(true);
     
     try {
-      const response = await axios.post(`http://localhost:5000/api/login`, formData);
+      const response = await axios.post(`https://resourcehoursmanagement-intern-production.up.railway.app/api/login`, formData);
       onLogin(response.data.user, response.data.token);
     } catch (error) {
       setMessage(error.response?.data?.message || 'Login failed');
@@ -313,7 +313,7 @@ const Login = ({ onLogin }) => {
     
     try {
       // Authenticate with the guest credentials from your database
-      const response = await axios.post(`http://localhost:5000/api/login`, {
+      const response = await axios.post(`https://resourcehoursmanagement-intern-production.up.railway.app/api/login`, {
         username: GUEST_CREDENTIALS.username,
         password: GUEST_CREDENTIALS.password
       });

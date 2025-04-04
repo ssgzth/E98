@@ -15,7 +15,7 @@ import {
   Line,
 } from "recharts";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://resourcehoursmanagement-intern-production.up.railway.app";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8"];
 

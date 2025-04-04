@@ -37,7 +37,7 @@ function App() {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/profile', {
+        const response = await axios.get('https://resourcehoursmanagement-intern-production.up.railway.app/api/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(response.data.user);

@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 
-const API_URL = "http://localhost:5000"; // Replace with your API URL
+const API_URL = "https://resourcehoursmanagement-intern-production.up.railway.app"; // Replace with your API URL
 
 const BusinessLineManager = () => {
   const [businessLines, setBusinessLines] = useState([]);

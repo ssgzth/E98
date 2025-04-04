@@ -249,7 +249,7 @@ const Home = () => {
           sx={{ minWidth: "170px" }}
         />
         <Autocomplete
-          options={projectOptions}
+          options={projectOptions.filter(project => project.isActive)}
           getOptionLabel={(option) => option?.name || ""}
           renderInput={(params) => (
             <TextField

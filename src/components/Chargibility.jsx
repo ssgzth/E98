@@ -11,7 +11,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import axios from "axios";
 import { parseISO } from "date-fns";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL
 
 const Chargibility = () => {
   const [data, setData] = useState({ businessLines: [] });

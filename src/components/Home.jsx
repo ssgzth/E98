@@ -18,7 +18,7 @@ import axios from "axios";
 import { data as initialDataModel } from "../config/data";
 import { startOfWeek, parseISO, isWithinInterval, endOfWeek } from "date-fns";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL
 
 const Home = () => {
   const [data, setData] = useState(initialDataModel);

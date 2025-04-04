@@ -289,7 +289,7 @@ import {
   Switch,
 } from "@mui/material";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL
 
 const CreateProject = () => {
   const [projects, setProjects] = useState([]);

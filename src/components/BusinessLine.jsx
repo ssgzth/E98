@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
+const API_BASE_URL = import.meta.env.VITE_APP_API_BASE_URL
 
 const BusinessLineManager = () => {
   const [businessLines, setBusinessLines] = useState([]);

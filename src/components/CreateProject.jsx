@@ -19,7 +19,7 @@
 //   MenuItem,
 // } from "@mui/material";
 
-// const API_URL = "https://resourcehoursmanagement-intern-production.up.railway.app"; // Replace with your API URL
+// const API_BASE_URL = "https://resourcehoursmanagement-intern-production.up.railway.app"; // Replace with your API URL
 
 // const CreateProject = () => {
 //   const [projects, setProjects] = useState([]);
@@ -33,7 +33,7 @@
 //   });
 
 //   useEffect(() => {
-//     axios.get(`${API_URL}/api/business-lines`, {
+//     axios.get(`${API_BASE_URL}/api/business-lines`, {
 //       headers: { 
 //         Authorization: `Bearer ${localStorage.getItem('token')}` 
 //       }
@@ -44,8 +44,8 @@
 //   // Fetch projects from API
 //   const fetchProjects = async () => {
 //     try {
-//       // const response = await axios.get(`${API_URL}/api/projects`);
-//       const response = await axios.get(`${API_URL}/api/projects`, {
+//       // const response = await axios.get(`${API_BASE_URL}/api/projects`);
+//       const response = await axios.get(`${API_BASE_URL}/api/projects`, {
 //         headers: { 
 //           Authorization: `Bearer ${localStorage.getItem('token')}` 
 //         }
@@ -95,11 +95,11 @@
 //       if (editingProject) {
 //         // Update project
 //         // await axios.put(
-//         //   `${API_URL}/api/projects/${editingProject._id}`,
+//         //   `${API_BASE_URL}/api/projects/${editingProject._id}`,
 //         //   payload
 //         // );
 //         await axios.put(
-//           `${API_URL}/api/projects/${editingProject._id}`,
+//           `${API_BASE_URL}/api/projects/${editingProject._id}`,
 //           payload,
 //           {
 //             headers: { 
@@ -122,9 +122,9 @@
 //         );
 //       } else {
 //         // Create project
-//         // const response = await axios.post(`${API_URL}/api/projects`, payload);
+//         // const response = await axios.post(`${API_BASE_URL}/api/projects`, payload);
 //         const response = await axios.post(
-//           `${API_URL}/api/projects`, 
+//           `${API_BASE_URL}/api/projects`, 
 //           payload,
 //           {
 //             headers: { 
@@ -158,8 +158,8 @@
 //     if (!isConfirmed) return;
 
 //     try {
-//       // await axios.delete(`${API_URL}/api/projects/${id}`);
-//       await axios.delete(`${API_URL}/api/projects/${id}`, {
+//       // await axios.delete(`${API_BASE_URL}/api/projects/${id}`);
+//       await axios.delete(`${API_BASE_URL}/api/projects/${id}`, {
 //         headers: { 
 //           Authorization: `Bearer ${localStorage.getItem('token')}` 
 //         }
@@ -289,7 +289,7 @@ import {
   Switch,
 } from "@mui/material";
 
-const API_URL = "https://resourcehoursmanagement-intern-production.up.railway.app"; // Replace with your API URL
+const API_BASE_URL = process.env.API_BASE_URL
 
 const CreateProject = () => {
   const [projects, setProjects] = useState([]);
@@ -304,7 +304,7 @@ const CreateProject = () => {
   });
 
   useEffect(() => {
-    axios.get(`${API_URL}/api/business-lines`, {
+    axios.get(`${API_BASE_URL}/api/business-lines`, {
       headers: { 
         Authorization: `Bearer ${localStorage.getItem('token')}` 
       }
@@ -315,7 +315,7 @@ const CreateProject = () => {
   // Fetch projects from API
   const fetchProjects = async () => {
     try {
-      const response = await axios.get(`${API_URL}/api/projects`, {
+      const response = await axios.get(`${API_BASE_URL}/api/projects`, {
         headers: { 
           Authorization: `Bearer ${localStorage.getItem('token')}` 
         }
@@ -368,7 +368,7 @@ const CreateProject = () => {
 
       if (editingProject) {
         await axios.put(
-          `${API_URL}/api/projects/${editingProject._id}`,
+          `${API_BASE_URL}/api/projects/${editingProject._id}`,
           payload,
           {
             headers: { 
@@ -391,7 +391,7 @@ const CreateProject = () => {
         );
       } else {
         const response = await axios.post(
-          `${API_URL}/api/projects`, 
+          `${API_BASE_URL}/api/projects`, 
           payload,
           {
             headers: { 

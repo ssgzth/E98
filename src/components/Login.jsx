@@ -269,7 +269,7 @@ import {
   Divider
 } from "@mui/material";
 import axios from "axios";
-
+const API_BASE_URL = process.env.API_BASE_URL
 const Login = ({ onLogin }) => {
   const [formData, setFormData] = useState({
     username: '',
@@ -298,7 +298,7 @@ const Login = ({ onLogin }) => {
     setLoading(true);
     
     try {
-      const response = await axios.post(`https://resourcehoursmanagement-intern-production.up.railway.app/api/login`, formData);
+      const response = await axios.post(`${API_BASE_URL}/api/login`, formData);
       onLogin(response.data.user, response.data.token);
     } catch (error) {
       setMessage(error.response?.data?.message || 'Login failed');
@@ -313,7 +313,7 @@ const Login = ({ onLogin }) => {
     
     try {
       // Authenticate with the guest credentials from your database
-      const response = await axios.post(`https://resourcehoursmanagement-intern-production.up.railway.app/api/login`, {
+      const response = await axios.post(`${API_BASE_URL}/api/login`, {
         username: GUEST_CREDENTIALS.username,
         password: GUEST_CREDENTIALS.password
       });

@@ -18,7 +18,7 @@ import axios from "axios";
 import { data as initialDataModel } from "../config/data";
 import { startOfWeek, parseISO, isWithinInterval, endOfWeek } from "date-fns";
 
-const API_BASE_URL = "https://resourcehoursmanagement-intern-production.up.railway.app";
+const API_BASE_URL = process.env.API_BASE_URL
 
 const Home = () => {
   const [data, setData] = useState(initialDataModel);

@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 
-const API_URL = "https://resourcehoursmanagement-intern-production.up.railway.app"; // Replace with your API URL
+const API_BASE_URL = process.env.API_BASE_URL
 
 const BusinessLineManager = () => {
   const [businessLines, setBusinessLines] = useState([]);
@@ -36,8 +36,8 @@ const BusinessLineManager = () => {
 
   const fetchBusinessLines = async () => {
     try {
-      // const response = await axios.get(`${API_URL}/api/business-lines`);
-      const response = await axios.get(`${API_URL}/api/business-lines`, {
+      // const response = await axios.get(`${API_BASE_URL}/api/business-lines`);
+      const response = await axios.get(`${API_BASE_URL}/api/business-lines`, {
         headers: { 
           Authorization: `Bearer ${localStorage.getItem('token')}` 
         }
@@ -76,11 +76,11 @@ const BusinessLineManager = () => {
       if (currentBusinessLine) {
         // Update existing business line
         // const response = await axios.put(
-        //   `${API_URL}/api/business-lines/${currentBusinessLine._id}`,
+        //   `${API_BASE_URL}/api/business-lines/${currentBusinessLine._id}`,
         //   formData
         // );
         const response = await axios.put(
-          `${API_URL}/api/business-lines/${currentBusinessLine._id}`,
+          `${API_BASE_URL}/api/business-lines/${currentBusinessLine._id}`,
           formData,
           {
             headers: {
@@ -96,11 +96,11 @@ const BusinessLineManager = () => {
       } else {
         // Create new business line
         // const response = await axios.post(
-        //   `${API_URL}/api/business-lines`,
+        //   `${API_BASE_URL}/api/business-lines`,
         //   formData
         // );
         const response = await axios.post(
-          `${API_URL}/api/business-lines`,
+          `${API_BASE_URL}/api/business-lines`,
           formData,
           {
             headers: {
@@ -123,9 +123,9 @@ const BusinessLineManager = () => {
     if (!isConfirmed) return;
 
     try {
-      // await axios.delete(`${API_URL}/api/business-lines/${id}`);
+      // await axios.delete(`${API_BASE_URL}/api/business-lines/${id}`);
      await axios.delete(
-        `${API_URL}/api/business-lines/${id}`,
+        `${API_BASE_URL}/api/business-lines/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`

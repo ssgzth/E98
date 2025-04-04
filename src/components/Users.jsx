@@ -19,7 +19,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 
-const API_BASE_URL = "https://resourcehoursmanagement-intern-production.up.railway.app"; // Replace with your actual API URL
+const API_BASE_URL = process.env.API_BASE_URL // Replace with your actual API URL
 
 const Users = () => {
   const [users, setUsers] = useState([]);

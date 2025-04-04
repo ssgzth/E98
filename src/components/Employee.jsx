@@ -1,5 +1,3 @@
-// Employee component with fixed-width summary section and scrollable project section
-
 import React, { useState, useEffect } from "react";
 import {
   Box,
@@ -18,7 +16,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import axios from "axios";
 import { data as initialDataModel } from "../config/data";
 
-const API_BASE_URL = "https://resourcehoursmanagement-intern-production.up.railway.app";
+const API_BASE_URL = process.env.API_BASE_URL
 
 const Employee = () => {
   const [data, setData] = useState(initialDataModel);

@@ -16,7 +16,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import axios from "axios";
 import { data as initialDataModel } from "../config/data";
 
-const API_BASE_URL = process.env.API_BASE_URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 const Employee = () => {
   const [data, setData] = useState(initialDataModel);

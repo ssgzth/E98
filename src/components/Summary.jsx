@@ -15,7 +15,7 @@ import {
   Line,
 } from "recharts";
 
-const API_BASE_URL = process.env.API_BASE_URL
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#8884d8"];
 

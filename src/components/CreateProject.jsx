@@ -337,7 +337,7 @@ const CreateProject = () => {
     setFormData({
       name: project?.name || "",
       businessLineId: project?.businessLine?._id || "",
-      isActive: project?.isActive !== undefined ? project.isActive : true,
+      isActive: project?.isActive !== undefined ? project.isActive : false,
     });
     setOpen(true);
   };
